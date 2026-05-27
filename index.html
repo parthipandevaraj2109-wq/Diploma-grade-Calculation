@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diploma Percentage Calculator – Credit System</title>
-
+  <link rel="icon" href="logo.png" />
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
@@ -669,7 +669,7 @@
         <i class="fa-solid fa-graduation-cap" style="color:#fff;font-size:0.88rem;"></i>
       </div>
       <span class="navbar-brand-text">Diploma Calculation</span>
-      <span class="nav-badge">made by Parthipan</span>
+      <span class="nav-badge">made by webpo</span>
     </div>
     <div class="d-flex align-items-center gap-3">
       <a href="#calculator" class="btn-nav-cta btn" style="text-decoration:none;">
@@ -808,13 +808,14 @@
           <select id="department" class="form-select" onchange="onDeptOrSemChange()">
             <option value="" disabled selected>— Select Department —</option>
             <option value="ECE">Electronics &amp; Communication (ECE)</option>
-            <option value="CSE">Computer Engineering</option>
-            <option value="MECH">Mechanical Engineering</option>
-            <option value="CIVIL">Civil Engineering</option>
-            <option value="EEE">Electrical Engineering</option>
-            <option value="IT">Information Technology</option>
-            <option value="AUTO">Automobile Engineering</option>
-            <option value="CHEM">Chemical Engineering</option>
+            <option value="CSE">Computer Engineering (CSE)</option>
+            <option value="AIML">Artificial Intelligence & Machine Learning (AIML)</option>
+            <option value="MECH">Mechanical Engineering (MECH)</option>
+            <option value="CIVIL">Civil Engineering (CIVIL)</option>
+            <option value="EEE">Electrical Engineering (EEE)</option>
+            <option value="AGRI">Agricultural Engineering (AGRI)</option>
+            <option value="AUTO">Automobile Engineering (AUTO)</option>
+            <option value="CHEM">Chemical Engineering (CHEM)</option>
             <option value="OTHER">Other</option>
           </select>
         </div>
@@ -1007,10 +1008,7 @@
     <p style="margin-top:6px;font-size:0.75rem;">
       Formula: <code style="color:var(--accent-teal);">Percentage = Σ(Credit × Marks) ÷ Total Credits</code>
     </p>
-    <div style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.78rem;text-align:center;">
-      <div style="margin-bottom:10px;">
-        <img src="parthipan.png" alt="Parthipan Devaraj" style="width:120px;height:120px;border-radius:12px;object-fit:cover;border:2px solid rgba(255,255,255,0.06);box-shadow:0 8px 24px rgba(0,0,0,0.35);" onerror="this.style.display='none' />
-      </div>
+  
       <p style="margin:8px 0;color:var(--text-secondary);">
         <strong>Developer:</strong> Parthipan Devaraj &nbsp;·&nbsp;
         <strong>Student:</strong> Marutam Nelli Polytechnic College &nbsp;·&nbsp;
@@ -1053,14 +1051,14 @@
   const PRESET_SUBJECTS = {
     /* ── Semester I ── */
     'ECE-1': [
-      { name: 'Tamil Marabu 2',                           credit: 2 },
-      { name: 'basic mathematics',                        credit: 4 },
-      { name: 'basic physics',                            credit: 3 },
-      { name: 'basic chemistry',                          credit: 3 },
-      { name: 'communicative english',                    credit: 2 },
-      { name: 'basic workshop practices',                 credit: 2 },
-      { name: 'digital workplace skills',                 credit: 2 },
-      { name: 'basic english for employability',          credit: 2 },
+      { name: 'Tamil Marabu',                           credit: 2 },
+      { name: 'Basic mathematics',                        credit: 4 },
+      { name: 'Basic physics',                            credit: 3 },
+      { name: 'Basic chemistry',                          credit: 3 },
+      { name: 'Communicative english',                    credit: 2 },
+      { name: 'Basic workshop practices',                 credit: 2 },
+      { name: 'Digital workplace skills',                 credit: 2 },
+      { name: 'Basic english for employability',          credit: 2 },
     ],
 
 /* ── Semester II ── */
@@ -1070,10 +1068,10 @@
       { name: 'Applied mathematics II',                   credit: 3 },
       { name: 'Applied physics',                          credit: 2 },
       { name: 'Applied chemistry',                        credit: 2 },
-      { name: 'basic engineering practices',              credit: 2 },
-      { name: 'drafting practices',                       credit: 2 },
-      { name: 'communication english',                    credit: 2 },
-      { name: 'advanced skills certification-2',          credit: 2 },
+      { name: 'Basic engineering practices',              credit: 2 },
+      { name: 'Drafting practices',                       credit: 2 },
+      { name: 'Communication english',                    credit: 2 },
+      { name: 'Advanced skills certification-2',          credit: 2 },
     ],
 
     /* ── Semester III ── */
@@ -1383,6 +1381,142 @@
     'MECH-6': [
       { name: 'Elective III (Pathway)',               credit: 3 },
       { name: 'Elective IV (Specialisation)',         credit: 3 },
+      { name: 'In-house Project / Internship / Fellowship', credit: 12 },
+    ],
+
+    /* ── Semester I ── */
+    'AIML-1': [
+      { name: 'Tamil Marabu',                             credit: 2 },
+      { name: 'Basic Mathematics',                        credit: 4 },
+      { name: 'Basic Physics',                            credit: 3 },
+      { name: 'Basic Chemistry',                          credit: 3 },
+      { name: 'Communicative English',                    credit: 2 },
+      { name: 'Basic Workshop Practices',                 credit: 2 },
+      { name: 'Digital Workplace Skills',                 credit: 2 },
+      { name: 'Basic English for Employability',          credit: 2 },
+    ],
+
+    /* ── Semester II ── */
+    'AIML-2': [
+      { name: 'Tamil and Technology',                     credit: 2 },
+      { name: 'Basics of Computer Engineering',     credit: 3 },
+      { name: 'Applied Mathematics II',                   credit: 3 },
+      { name: 'Applied Physics',                          credit: 2 },
+      { name: 'Applied Chemistry',                        credit: 2 },
+      { name: 'Basic Engineering Practices',              credit: 2 },
+      { name: 'Drafting Practices',                       credit: 2 },
+      { name: 'Communication English',                    credit: 2 },
+      { name: 'Advanced Skills Certification - 2',        credit: 2 },
+    ],
+
+    /* ── Semester III ── */
+    'AIML-3': [
+      { name: 'Introduction to Python Programming',       credit: 4 },
+      { name: 'Fundamentals of Data Science',             credit: 4 },
+      { name: 'Programming Paradigms with Python',        credit: 2 },
+      { name: 'OOPS with JAVA',                           credit: 3 },
+      { name: 'Introduction to Database Concepts',        credit: 3 },
+      { name: 'Operating Systems',                        credit: 2 },
+      { name: 'Advanced Skills Certification - 3',        credit: 2 },
+      { name: 'Health & Wellness',                        credit: 1 },
+    ],
+
+    /* ── Semester IV ── */
+    'AIML-4': [
+      { name: 'Probability and Statistics',               credit: 3 },
+      { name: 'Data Structures Using Python',             credit: 4 },
+      { name: 'R Programming',                            credit: 3 },
+      { name: 'Data Exploration and Visualization',       credit: 3 },
+      { name: 'Embedded Systems and IOT',                 credit: 2 },
+      { name: 'Real Time Mini Project',                   credit: 2 },
+      { name: 'Advanced Skills Certification - 4',        credit: 2 },
+    ],
+
+    /* ── Semester V ── */
+    'AIML-5': [
+      { name: 'Introduction to AI',                       credit: 3 },
+      { name: 'Elective - 1',                             credit: 3 },
+      { name: 'Artificial Intelligence Laboratory',       credit: 3 },
+      { name: 'Fundamentals of Machine Learning',         credit: 3 },
+      { name: 'Elective - 2',                             credit: 3 },
+      { name: 'Innovation & Startup',                     credit: 2 },
+      { name: 'Industrial Training (Summer Vacation - 90 Hours)', credit: 2 },
+      { name: 'Advanced Skills Certification - 5',        credit: 2 },
+    ],
+
+    /* ── Semester VI ── */
+    'AIML-6': [
+      { name: 'Artificial Intelligence and Robotics',     credit: 4 },
+      { name: 'Elective - 3',                             credit: 3 },
+      { name: 'In-house Project / Internship / Fellowship', credit: 12 },
+    ],
+
+    /* ── Semester I ── */
+    'AGRI-1': [
+      { name: 'Tamil Marabu',                             credit: 2 },
+      { name: 'Basic Mathematics',                        credit: 4 },
+      { name: 'Basic Physics',                            credit: 3 },
+      { name: 'Basic Chemistry',                          credit: 3 },
+      { name: 'Communicative English',                    credit: 2 },
+      { name: 'Basic Workshop Practices',                 credit: 2 },
+      { name: 'Digital Workplace Skills',                 credit: 2 },
+      { name: 'Basic English for Employability',          credit: 2 },
+    ],
+
+    /* ── Semester II ── */
+    'AGRI-2': [
+     { name: 'Tamil and Technology',                      credit: 2 },
+      { name: 'Basics of Mechanical Engineering ',        credit: 3 },
+      { name: 'Applied Mathematics ',                     credit: 3 },
+      { name: 'Applied Physics',                          credit: 2 },
+      { name: 'Applied Chemistry',                        credit: 2 },
+      { name: 'Basic Engineering Practices',              credit: 2 },
+      { name: 'Drafting Practices',                       credit: 2 },
+      { name: 'Communication English',                    credit: 2 },
+      { name: 'Advanced Skills Certification - 2',        credit: 2 },
+    ],
+
+    /* ── Semester III ── */
+    'AGRI-3': [
+      { name: 'Soil and water conservation',            credit: 3 },
+      { name: 'Engineering Mechanics',                   credit: 4 },
+      { name: 'Surveying Practice**',                    credit: 3 },
+      { name: 'Industrial drives & controls*',           credit: 3 },
+      { name: 'Machine Drawing & CAD',                   credit: 3 },
+      { name: 'Principles of crop production',           credit: 3 },
+      { name: 'Advanced Skills Certification-3',         credit: 2 },
+      { name: 'Health & Wellness',                       credit: 1 },
+    ],
+
+    /* ── Semester IV ── */
+    'AGRI-4': [
+      { name: 'Irrigation engineering',                  credit: 3 },
+      { name: 'Fluid mechanics',                         credit: 3 },
+      { name: 'Post harvest technology',                 credit: 4 },
+      { name: 'Fluid mechanics practical',               credit: 2 },
+      { name: 'Farm Structural Drawing',                 credit: 2 },
+      { name: 'Machine shop practice',                   credit: 3 },
+      { name: 'Advanced Skills Certification-4',         credit: 2 },
+      { name: 'Health & Wellness',                       credit: 1 },
+    ],
+
+    /* ── Semester V ── */
+    'AGRI-5': [
+      { name: 'Farm Tractor Theory',                     credit: 4 },
+      { name: 'Farm machinery Theory',                   credit: 4 },
+      { name: 'Elective-1',                              credit: 4 },
+      { name: 'Farm Tractor Practical',                  credit: 2 },
+      { name: 'Farm machinery Practical',                credit: 2 },
+      { name: 'Innovation & Startup',                    credit: 2 },
+      { name: 'Industrial Training * [Summer Vacation-90 Hours]', credit: 2 },
+      { name: 'Advanced Skills Certification-5',         credit: 2 },
+      { name: 'Health & Wellness',                       credit: 1 },
+    ],
+
+    /* ── Semester VI ── */
+    'AGRI-6': [
+      { name: 'Elective 2',                              credit: 3 },
+      { name: 'Elective 3',                              credit: 2 },
       { name: 'In-house Project / Internship / Fellowship', credit: 12 },
     ],
   };
